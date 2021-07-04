@@ -23,6 +23,9 @@ array=("async/go-server")
 # attachment
 array+=("attachment/go-server")
 
+# chain
+array+=("chain")
+
 # config-api
 array+=("config-api/go-server")
 
@@ -87,7 +90,7 @@ array+=("version/go-server-v2")
 
 for((i=0;i<${#array[*]};i++))
 do
-	./integrate_test.sh ${array[i]}
+	./integrate_test.sh "${array[i]}"
 	result=$?
 	if [ $result -gt 0 ]; then
     exit $result
